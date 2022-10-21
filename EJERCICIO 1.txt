@@ -1,0 +1,14 @@
+mysql -u root -p;
+SHOW DATABASES;
+USE CLASSICMODELS;
+-----------------------
+SHOW TABLES;
+____________________________________________________
+ejercicio 1
+1:Seleccione todos los empleados que no tngan objeto.
+SELECT * FROM employees;
+2:seleccione todos los empleados que son jefe.
+"SELECT *FROM employees WHERE reportsTo IS NULL;"
+3 seleccione tods los empleados que no son jefes
+"SELECT * FROM employees WHERE employeeNumber IN (SELECT DISTINCT reportsTo FROM employyes WHERE reportsTo IS NOT NULL);"
+

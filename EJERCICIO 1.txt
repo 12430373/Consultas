@@ -33,6 +33,52 @@ MAYOR O IGUAL A 1000 ORDENADOS POR MONTO DESCENDENTEMENTEL.
 SELECT * FROM payments WHERE paymentDate >="2003-01-01" AND paymentDate<="2003-12-31" AND amount >=1000 ORDER BY amount DESC;
 
 9 SELECCIONE LOS PAGOS MAS ALTOS DEL 2004
+
+10 SELCCIONE LOS PAGOS MAS BAJOS DEL 2004
+SELECT * DE pagos DONDE fecha de pago ENTRE '2004-01-01' Y '2004-12-31' ORDENAR POR cantidad ASC LÍMITE 10 ;
+
+11.- select todos los empleados de las oficinas de 'USA'  
+ 
+SELECT employees.*, offices.country FROM employees JOIN offices ON employees.officeCode = offices.officeCode WHERE offices.country = 'USA'; 
+ 
+   
+ 
+12.- Seleccionar el monto total en ventas de los productos de la linea 'Motorcycles'
+SELECT SUM(payments.amount) AS total_ventas FROM payments JOIN customers ON payments.customerNumber = customers.customerNumber JOIN orders 
+ON customers.customerNumber = orders.customerNumber JOIN orderdetails ON orders.orderNumber = orderdetails.orderNumber JOIN products ON 
+orderdetails.productCode = products.productCode JOIN productLines ON products.productLine = productLines.productLine WHERE productLines.productLine = 'Motorcycles';
+
+13 SELECCOPNE TODOS LOS PRODUCTOS DE LA LINEA 'TRANS'
+SELECT products.* FROM products JOIN productlines ON products.productLine = productlines.productLine WHERE productlines.productLine ='trains';
+
+14 SELECCIONE TODOS LOS PAGOS REALIZADOS POR 'MINI WHEOLS CO'
+ select customers.* from customers JOIN paymentes ON customers.payments = customers.custoNumber where customers.custoNumber='Mini Wheels Co.';
+
+
+15 SELECCIONE TODOS LOS PAGOS REALIZADOS POR CLIENTES DE 'SPAIN'
+
+
+16 SELECCIONE TODOS LOS PRODUCTOS CORRESPONDIENTES A LAS ORDENES DE COMPRA REALIZADAS EL 2003
+
+
+17 SELECIONAR TODOS LOS EMPLEADOS DE LAS OFICINAS BICADAS EN 'USA' CUYOS JEFES NO ESTEN EN OFICINAS DE 'USA'
+
+
+18 SELECCIONAR LOS PRODUCTOS QUE FIGURA EN ORDENEES DE COMPRA DEL CLIENTE COMO CONTACTO APELLIDO ' YOUNG'
+
+
+19 SELECIONAR LAS RDENES DE COMPRA DONDE APARECE EL PRODUCTO DENOMINADO 'P-51-D MUSTANG'
+
+
+20 SELECCIONAR LAS ORDENES DE COMPRA DE TODOS LOS PRODUCTOS DE LA LINEA 'CLASSIC CARS'
+
+
+21 SELECCIONAR LAS ORDENES DE LA COMPRA REPORTADAS POR EL EMPLEADOS ' KING TOM'
+
+
+22 SELECCIONAR TODOS LOS PAGOS QUE NO FUERON REALIZADOS POR 'PITIT AUTO'
+
+
 SELECT * FROM payments WHERE paymentDate BETWEEN '2004-01-01' AND '2004-12-31' ORDER BY amount DESC LIMIT 10 ;
 
 
